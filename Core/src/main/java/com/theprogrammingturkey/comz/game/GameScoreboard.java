@@ -35,9 +35,9 @@ public class GameScoreboard
 		team.setAllowFriendlyFire(false);
 		objective = board.registerNewObjective(this.game.getName(), "dummy", ChatColor.RED + this.game.getName());
 		objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-		round = objective.getScore(ChatColor.RED + "Round");
+		round = objective.getScore(ChatColor.RED + "回合");
 		round.setScore(0);
-		zombiesLeft = objective.getScore(ChatColor.RED + "Zombies Left");
+		zombiesLeft = objective.getScore(ChatColor.RED + "剩余僵尸");
 		zombiesLeft.setScore(0);
 	}
 
