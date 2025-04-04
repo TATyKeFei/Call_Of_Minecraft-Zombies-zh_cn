@@ -57,7 +57,7 @@ public class GameManager
 		JsonElement jsonElement = ConfigManager.getConfig(COMZConfig.ARENAS).getJson();
 		if(jsonElement.isJsonNull())
 		{
-			COMZombies.log.log(Level.SEVERE, "Failed to load in the arenas from the arenas config!");
+			COMZombies.log.log(Level.SEVERE, "从房间配置中加载房间失败!");
 			return;
 		}
 		JsonObject jsonObject = jsonElement.getAsJsonObject();
@@ -67,9 +67,9 @@ public class GameManager
 			if(game.loadGame(arena.getValue()))
 				games.add(game);
 			else
-				COMZombies.log.log(Level.SEVERE, "Failed to load arena " + arena.getKey() + "!");
+				COMZombies.log.log(Level.SEVERE, "房间加载失败" + arena.getKey() + "!");
 		}
-		Bukkit.broadcastMessage(COMZombies.PREFIX + ChatColor.RED + ChatColor.BOLD + " Done loading arenas!");
+		Bukkit.broadcastMessage(COMZombies.PREFIX + ChatColor.RED + ChatColor.BOLD + " 房间加载完成!");
 	}
 
 	public void saveAllGames()
